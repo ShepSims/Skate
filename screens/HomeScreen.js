@@ -1,18 +1,28 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-const HomeScreen = ({ navigation }) => {
-	const handlePress = () => {
-		navigation.navigate('EventPage');
-	};
+const HomeScreen = () => {
+	const navigation = useNavigation();
 
 	return (
 		<View style={styles.container}>
-			{[...Array(6)].map((_, index) => (
-				<TouchableOpacity key={index} style={styles.tile} onPress={handlePress}>
-					<Text style={styles.tileText}>Event {index + 1}</Text>
-				</TouchableOpacity>
-			))}
+			<Text style={styles.header}>Skate Tracker</Text>
+			<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Routes')}>
+				<Text style={styles.buttonText}>Routes</Text>
+			</TouchableOpacity>
+			<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Slides')}>
+				<Text style={styles.buttonText}>Slides</Text>
+			</TouchableOpacity>
+			<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('MeetupSpots')}>
+				<Text style={styles.buttonText}>Meetup Spots</Text>
+			</TouchableOpacity>
+			<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('RegularMeetups')}>
+				<Text style={styles.buttonText}>Regular Meetups</Text>
+			</TouchableOpacity>
+			<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Profile')}>
+				<Text style={styles.buttonText}>Profile</Text>
+			</TouchableOpacity>
 		</View>
 	);
 };
@@ -20,21 +30,22 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		flexDirection: 'row',
-		flexWrap: 'wrap',
 		justifyContent: 'center',
 		alignItems: 'center',
 	},
-	tile: {
-		width: '45%',
-		margin: '2.5%',
-		height: 150,
-		justifyContent: 'center',
-		alignItems: 'center',
+	header: {
+		fontSize: 32,
+		marginBottom: 20,
+	},
+	button: {
+		width: '80%',
+		padding: 15,
+		margin: 10,
 		backgroundColor: '#4CAF50',
-		borderRadius: 10,
+		borderRadius: 5,
+		alignItems: 'center',
 	},
-	tileText: {
+	buttonText: {
 		color: '#fff',
 		fontSize: 18,
 	},

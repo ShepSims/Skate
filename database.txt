@@ -1,0 +1,53 @@
+Root Strcuture 
+
+{
+  "routes": {},
+  "slides": {},
+  "users": {},
+  "meetupSpots": {},
+  "regularMeetups": {}
+}
+
+
+
+  "routes": {
+    "routeId1": {
+      "googleMapsRoute": "URL",
+      "difficulty": "easy",
+      "distance": 5.0
+    },..
+}
+
+
+
+  "slides": {
+    "slideId1": {
+      "startTime": "10:00",
+      "lengthOfTime": 2.0,
+      "meetupSpot": "meetupSpotId1",
+      "route": "routeId1",
+      "date": "2024-06-16"
+    },}
+
+      "users": {
+    "userId1": {
+      "name": "John Doe",
+      "instagram": "@johndoe",
+      "telegram": "@johndoe",
+      "completedSlides": ["slideId1", "slideId2"],
+      "createdSlides": ["slideId3"]
+    },}
+
+     "meetupSpots": {
+    "meetupSpotId1": {
+      "description": "Central Park",
+      "location": "40.785091, -73.968285"
+    },}
+
+      "regularMeetups": {
+    "regularMeetupId1": {
+      "recurrencePattern": "weekly",
+      "title": "Monday Night Beginners",
+      "possibleRoutes": ["routeId1", "routeId2"],
+      "nextUpcomingRoute": "routeId1"
+    },}
